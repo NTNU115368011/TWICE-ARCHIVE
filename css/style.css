@@ -1,0 +1,510 @@
+/* ========================================
+   TWICE ARCHIVE
+   Minimalist Editorial Magazine Style
+======================================== */
+
+/* 1. 網站基本設定與顏色 */
+
+:root {
+    --color-apricot: #FCC89B;
+    --color-magenta: #FF5FA2;
+    --color-white: #FFFFFF;
+    --color-background: #FFF3E5;
+    --color-text: #292525;
+    --color-gray: #777777;
+    --color-light-gray: #EAE5E1;
+
+    --font-heading: Georgia, "Noto Serif TC", serif;
+    --font-body: Arial, "Noto Sans TC", sans-serif;
+
+    --container-width: 1200px;
+}
+
+
+/* 2. 全站基本樣式 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* 3. 共用版面 */
+
+.container {
+    width: min(90%, var(--container-width));
+    margin: 0 auto;
+}
+
+.section {
+    padding: 90px 0;
+}
+
+.section-heading {
+    margin-bottom: 40px;
+}
+
+.section-label {
+    color: var(--color-magenta);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-title {
+    margin-top: 8px;
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.section-description {
+    margin-top: 12px;
+    color: var(--color-gray);
+    font-size: 0.95rem;
+}
+
+
+/* 4. 導覽列 */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 243, 229, 0.96);
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+.header-inner {
+    min-height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-logo {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.site-logo span {
+    color: var(--color-magenta);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-menu a {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--color-magenta);
+}
+
+
+/* 5. 首頁主視覺 */
+
+.hero {
+    padding: 65px 0 80px;
+}
+
+.hero-label {
+    color: var(--color-magenta);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.hero-title {
+    margin: 20px 0;
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.hero-title span {
+    color: var(--color-magenta);
+}
+
+.hero-description {
+    max-width: 550px;
+    margin-bottom: 30px;
+    color: var(--color-gray);
+    font-size: 1rem;
+}
+
+.hero-image {
+    width: 100%;
+    max-height: 560px;
+    object-fit: cover;
+    background-color: var(--color-apricot);
+}
+
+
+/* 6. 按鈕 */
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid var(--color-text);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-magenta);
+    border-color: var(--color-magenta);
+    color: var(--color-white);
+}
+
+.btn-primary {
+    background-color: var(--color-magenta);
+    border-color: var(--color-magenta);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-text);
+    border-color: var(--color-text);
+}
+
+
+/* 7. 分類連結 */
+
+.category-list {
+    border-top: 1px solid var(--color-light-gray);
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 5px;
+    border-bottom: 1px solid var(--color-light-gray);
+    transition: padding 0.3s ease;
+}
+
+.category-item:hover {
+    padding-left: 15px;
+    color: var(--color-magenta);
+}
+
+.category-number {
+    margin-right: 20px;
+    color: var(--color-magenta);
+    font-size: 0.8rem;
+}
+
+.category-name {
+    flex: 1;
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.category-arrow {
+    font-size: 1.3rem;
+}
+
+
+/* 8. 內頁標題 */
+
+.page-hero {
+    padding: 80px 0 55px;
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+.page-label {
+    color: var(--color-magenta);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.page-title {
+    margin: 15px 0;
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.page-description {
+    max-width: 650px;
+    color: var(--color-gray);
+}
+
+
+/* 9. 團體介紹 */
+
+.group-image {
+    width: 100%;
+    margin-bottom: 35px;
+    object-fit: cover;
+}
+
+.content-text {
+    max-width: 800px;
+    font-size: 1rem;
+    line-height: 2;
+}
+
+.info-list {
+    margin-top: 30px;
+    border-top: 1px solid var(--color-light-gray);
+}
+
+.info-item {
+    display: flex;
+    gap: 30px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+.info-label {
+    width: 130px;
+    flex-shrink: 0;
+    color: var(--color-gray);
+    font-size: 0.9rem;
+}
+
+.info-value {
+    font-size: 0.95rem;
+}
+
+
+/* 10. 成員介紹 */
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px 25px;
+}
+
+.member-card {
+    min-width: 0;
+}
+
+.member-image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    background-color: var(--color-apricot);
+}
+
+.member-name {
+    margin-top: 15px;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.member-name-en {
+    color: var(--color-magenta);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.member-description {
+    margin-top: 8px;
+    color: var(--color-gray);
+    font-size: 0.85rem;
+}
+
+.member-birthday {
+    margin-top: 8px;
+    color: var(--color-gray);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+
+/* 11. 音樂作品 */
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px 25px;
+}
+
+.album-card {
+    min-width: 0;
+}
+
+.album-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background-color: var(--color-apricot);
+}
+
+.album-title {
+    margin-top: 15px;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.album-date {
+    margin-top: 5px;
+    color: var(--color-magenta);
+    font-size: 0.8rem;
+}
+
+.album-type {
+    color: var(--color-gray);
+    font-size: 0.8rem;
+}
+
+
+/* 12. 頁尾 */
+
+.site-footer {
+    margin-top: 60px;
+    padding: 35px 0;
+    border-top: 1px solid var(--color-light-gray);
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.footer-note {
+    color: var(--color-gray);
+    font-size: 0.75rem;
+    text-align: right;
+}
+
+
+/* 13. 響應式設計：平板 */
+
+@media (max-width: 900px) {
+
+    .member-grid,
+    .album-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+}
+
+
+/* 14. 響應式設計：手機 */
+
+@media (max-width: 600px) {
+    .header-inner {
+        min-height: 65px;
+    }
+
+    .site-logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-menu {
+        gap: 12px;
+    }
+
+    .nav-menu a {
+        font-size: 0.7rem;
+        letter-spacing: 0;
+    }
+
+    .hero {
+        padding: 45px 0 55px;
+    }
+
+    .hero-title {
+        letter-spacing: -1px;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+
+    .page-hero {
+        padding: 55px 0 40px;
+    }
+
+    .member-grid,
+    .album-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 15px;
+    }
+
+    .member-name,
+    .album-title {
+        font-size: 1.1rem;
+    }
+
+    .info-item {
+        gap: 15px;
+    }
+
+    .info-label {
+        width: 100px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-note {
+        text-align: left;
+    }
+}
